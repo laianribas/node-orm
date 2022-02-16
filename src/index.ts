@@ -1,7 +1,10 @@
+import 'reflect-metadata'
 import express, { json } from "express";
-
+import createConnection from './database/index'
 import { router } from "./routes"
 
+
+createConnection();
 const server = express();
 
 server.use(json());//nunca aceitar o JSON antes de entrar nas rotas
